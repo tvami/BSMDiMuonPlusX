@@ -7,23 +7,24 @@ config = Configuration()
 config.section_('General')
 config.General.transferOutputs = True
 config.General.transferLogs = True
-config.General.requestName = 'DYto2Mu_Bin-MLL-10to50_NanoAODScoutingFlat_2024_v2'
+config.General.requestName = 'GluGluHToDarkShowers-ScenarioA_ctau-0p1-mA-15-mpi-35_NanoGen_2024_v1'
 
 config.section_('JobType')
 config.JobType.allowUndistributedCMSSW = True
 config.JobType.pluginName = 'Analysis'
-config.JobType.psetName = 'cfg_NanoAODScouting_flat_cfg.py'
-config.JobType.outputFiles =  ['nano_scouting_flat.root']
+config.JobType.psetName = 'cfg_nanogen_only.py'
+config.JobType.outputFiles = ['NanoGen.root']
 config.JobType.disableAutomaticOutputCollection = True
 config.JobType.maxMemoryMB = 2500
 #config.JobType.numCores = 8
 
 config.section_('Data')
-#config.Data.inputDBS = 'phys03'
-config.Data.inputDataset = '/DYto2Mu_Bin-MLL-10to50_TuneCP5_13p6TeV_powheg-pythia8/RunIII2024Summer24MiniAODv6-150X_mcRun3_2024_realistic_v2-v2/MINIAODSIM'
+config.Data.inputDBS = 'phys03'
+config.Data.inputDataset = '/GluGluHToDarkShowers-ScenarioA_ctau-0p1-mA-15-mpi-35_13p6TeV/tvami-GluGluHToDarkShowers-ScenarioA_ctau-0p1-mA-15-mpi-35_GENSIM_2024_v1-4ea4c871a0a9b29ef8d4b49e08d70e62/USER'
 config.Data.outLFNDirBase = '/store/user/tvami/DarkShower/'
 config.Data.splitting = 'FileBased'
-config.Data.unitsPerJob = 2 
+config.Data.unitsPerJob = 50
+#config.Data.totalUnits = 1
 config.Data.ignoreLocality = True
 config.Data.publication = True
 

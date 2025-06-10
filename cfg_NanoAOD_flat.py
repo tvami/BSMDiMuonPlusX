@@ -80,7 +80,7 @@ process.NANOAODSIM1output = cms.OutputModule("NanoAODOutputModule",
         dataTier = cms.untracked.string('NANOAODSIM'),
         filterName = cms.untracked.string('')
     ),
-    fileName = cms.untracked.string('file:EXO-RunIII2024Summer24NanoAODv15-01654_scouting_flat.root'),
+    fileName = cms.untracked.string('file:nano_scouting_flat.root'),
     outputCommands = process.NANOAODSIMEventContent.outputCommands
 )
 

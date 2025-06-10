@@ -7,23 +7,24 @@ config = Configuration()
 config.section_('General')
 config.General.transferOutputs = True
 config.General.transferLogs = True
-config.General.requestName = 'DYto2Mu_Bin-MLL-10to50_NanoAODScoutingFlat_2024_v2'
+config.General.requestName = 'gg2H_H2A_MuMuBB-mA3-15-mH1-125-mH2-100_GENSIM_2024_v2'
 
 config.section_('JobType')
 config.JobType.allowUndistributedCMSSW = True
-config.JobType.pluginName = 'Analysis'
-config.JobType.psetName = 'cfg_NanoAODScouting_flat_cfg.py'
-config.JobType.outputFiles =  ['nano_scouting_flat.root']
+config.JobType.pluginName = 'PrivateMC'
+config.JobType.psetName = 'cfg_gg2H_H2A_MuMuBB_GENSIM.py'
+config.JobType.inputFiles = []
+config.JobType.outputFiles = ['GENSIM.root']
 config.JobType.disableAutomaticOutputCollection = True
-config.JobType.maxMemoryMB = 2500
-#config.JobType.numCores = 8
+config.JobType.maxMemoryMB = 3000
 
 config.section_('Data')
-#config.Data.inputDBS = 'phys03'
-config.Data.inputDataset = '/DYto2Mu_Bin-MLL-10to50_TuneCP5_13p6TeV_powheg-pythia8/RunIII2024Summer24MiniAODv6-150X_mcRun3_2024_realistic_v2-v2/MINIAODSIM'
 config.Data.outLFNDirBase = '/store/user/tvami/DarkShower/'
-config.Data.splitting = 'FileBased'
-config.Data.unitsPerJob = 2 
+config.Data.outputPrimaryDataset = 'gg2H_H2A_MuMuBB-mA3-15-mH1-125-mH2-100_13p6TeV'
+config.Data.outputDatasetTag = config.General.requestName
+config.Data.splitting = 'EventBased'
+config.Data.unitsPerJob = 200
+config.Data.totalUnits = 200000
 config.Data.ignoreLocality = True
 config.Data.publication = True
 

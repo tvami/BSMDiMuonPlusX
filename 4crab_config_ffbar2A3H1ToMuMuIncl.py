@@ -7,23 +7,23 @@ config = Configuration()
 config.section_('General')
 config.General.transferOutputs = True
 config.General.transferLogs = True
-config.General.requestName = 'DYto2Mu_Bin-MLL-10to50_NanoAODScoutingFlat_2024_v2'
+config.General.requestName = 'ffbar2A3H1ToMuMuIncl-mA3-15-mH1-125_MiniAOD_2024_v1'
 
 config.section_('JobType')
 config.JobType.allowUndistributedCMSSW = True
 config.JobType.pluginName = 'Analysis'
-config.JobType.psetName = 'cfg_NanoAODScouting_flat_cfg.py'
-config.JobType.outputFiles =  ['nano_scouting_flat.root']
+config.JobType.psetName = 'EXO-RunIII2024Summer24MiniAODv6-01654_1_cfg.py'
+config.JobType.outputFiles = ['EXO-RunIII2024Summer24MiniAODv6-01654.root']
 config.JobType.disableAutomaticOutputCollection = True
-config.JobType.maxMemoryMB = 2500
+config.JobType.maxMemoryMB = 4000
 #config.JobType.numCores = 8
 
 config.section_('Data')
-#config.Data.inputDBS = 'phys03'
-config.Data.inputDataset = '/DYto2Mu_Bin-MLL-10to50_TuneCP5_13p6TeV_powheg-pythia8/RunIII2024Summer24MiniAODv6-150X_mcRun3_2024_realistic_v2-v2/MINIAODSIM'
+config.Data.inputDBS = 'phys03'
+config.Data.inputDataset = '/ffbar2A3H1ToMuMuIncl-mA3-15-mH1-125_13p6TeV/tvami-crab_ffbar2A3H1ToMuMuIncl-mA3-15-mH1-125_AOD_2024_v1-352e18bc8878d9a2995643a82c09d9d5/USER'
 config.Data.outLFNDirBase = '/store/user/tvami/DarkShower/'
 config.Data.splitting = 'FileBased'
-config.Data.unitsPerJob = 2 
+config.Data.unitsPerJob = 1
 config.Data.ignoreLocality = True
 config.Data.publication = True
 
