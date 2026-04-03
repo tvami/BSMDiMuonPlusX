@@ -7,7 +7,7 @@ config = Configuration()
 config.section_('General')
 config.General.transferOutputs = True
 config.General.transferLogs = True
-config.General.requestName = 'gg2H_H2A_MuMuBB_NanoGen_2024_v1'
+config.General.requestName = 'gg2H_H2A_MuMuBB-mA3-15-mH1-125-mH2-100_NanoGen_2024_v2'
 
 config.section_('JobType')
 config.JobType.allowUndistributedCMSSW = True
@@ -20,7 +20,7 @@ config.JobType.maxMemoryMB = 2500
 
 config.section_('Data')
 config.Data.inputDBS = 'phys03'
-config.Data.inputDataset = '/gg2H_H2A_MuMuBB-mA3-15-mH1-125-mH2-100_13p6TeV/tvami-gg2H_H2A_MuMuBB-mA3-15-mH1-125-mH2-100_GENSIM_2024_v1-50100ea9553d8ac68b996b0aa88e87fa/USER'
+config.Data.inputDataset = '/gg2H_H2A_MuMuBB-mA3-15-mH1-125-mH2-100_13p6TeV/tvami-gg2H_H2A_MuMuBB-mA3-15-mH1-125-mH2-100_GENSIM_2024_v2-5beaa20e1f8d710506130f12fa51c293/USER'
 config.Data.outLFNDirBase = '/store/user/tvami/DarkShower/'
 config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = 50

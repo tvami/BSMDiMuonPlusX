@@ -12,8 +12,8 @@ config.General.requestName = 'DYto2Mu_Bin-MLL-10to50_NanoAODScoutingFlat_2024_v2
 config.section_('JobType')
 config.JobType.allowUndistributedCMSSW = True
 config.JobType.pluginName = 'Analysis'
-config.JobType.psetName = 'cfg_NanoAODScouting_flat_cfg.py'
-config.JobType.outputFiles =  ['nano_scouting_flat.root']
+config.JobType.psetName = 'NanoAODScouting-01654_1_flat_cfg.py'
+config.JobType.outputFiles = ['Summer24NanoAODv15-01654_scouting_flat.root']
 config.JobType.disableAutomaticOutputCollection = True
 config.JobType.maxMemoryMB = 2500
 #config.JobType.numCores = 8

@@ -28,7 +28,7 @@ process.maxEvents = cms.untracked.PSet(
 
 # Input source
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring('file:GENSIM.root'),
+    fileNames = cms.untracked.vstring('file:GENSIM_1000.root'),
     secondaryFileNames = cms.untracked.vstring()
 )
 

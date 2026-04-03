@@ -7,7 +7,7 @@ config = Configuration()
 config.section_('General')
 config.General.transferOutputs = True
 config.General.transferLogs = True
-config.General.requestName = 'ffbar2A3H1ToMuMuIncl-mA3-15-mH1-125_NanoAODScoutingFlat_2024_v2'
+config.General.requestName = 'ffbar2A3H1ToMuMuIncl-mA3-15-mH1-125_NanoAODScoutingFlat_2024_v3'
 
 config.section_('JobType')
 config.JobType.allowUndistributedCMSSW = True

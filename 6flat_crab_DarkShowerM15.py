@@ -7,7 +7,7 @@ config = Configuration()
 config.section_('General')
 config.General.transferOutputs = True
 config.General.transferLogs = True
-config.General.requestName = 'GluGluHToDarkShowers-ScenarioA_ctau-0p1-mA-15-mpi-1_NanoAODScoutingFlat_2024_v2'
+config.General.requestName = 'GluGluHToDarkShowers-ScenarioA_ctau-0p1-mA-15-mpi-1_NanoAODScoutingFlat_2024_v3'
 
 config.section_('JobType')
 config.JobType.allowUndistributedCMSSW = True

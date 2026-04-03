@@ -3,7 +3,7 @@ void analyze_mother_daughters(const char* filename, int mother_pdg_id) {
 // Usage:
 // root -l
 // .L analyze_mother_daughters.C
-// analyze_mother_daughters("NanoGen.root", 36)
+// analyze_mother_daughters("NanoGen_v1.root", 36)
 
   
   gROOT->SetBatch(kTRUE);
@@ -32,7 +32,7 @@ void analyze_mother_daughters(const char* filename, int mother_pdg_id) {
   TH1F* h_daughter_pdgId = new TH1F("h_daughter_pdgId", Form("PDG ID of %s;PDG ID;Count", title_base.Data()), 40, -15, 25);
   TH1F* h_daughter_pt = new TH1F("h_daughter_pt", Form("p_{T} of %s;p_{T} [GeV];Count", title_base.Data()), 100, 0, 200);
   TH1F* h_daughter_eta = new TH1F("h_daughter_eta", Form("#eta of %s;#eta;Count", title_base.Data()), 100, -5, 5);
-  TH1F* h_invariant_mass = new TH1F("h_invariant_mass", Form("Invariant Mass of PDG %d Daughter Pairs;Mass [GeV];Count", mother_pdg_id), 100, 0, 300);
+  TH1F* h_invariant_mass = new TH1F("h_invariant_mass", Form("Invariant Mass of PDG %d Daughter Pairs;Mass [GeV];Count", mother_pdg_id), 100, 0, 600);
   TH1F* h_vertex_r = new TH1F("h_vertex_r", Form("Vertex Radial Distance of %s;R [cm];Count", title_base.Data()), 100, 0, 0.1);
   
     // Counters
@@ -154,7 +154,7 @@ void analyze_mother_daughters(const char* filename, int mother_pdg_id) {
             float inv_mass = pair.M();
             h_invariant_mass->Fill(inv_mass);
             total_pairs++;
-            
+
             // cout << "  Pair (" << k << "," << l << "): PDG(" << daughter_pdgs[k]
             // << "," << daughter_pdgs[l] << ") -> Invariant Mass = "
             // << inv_mass << " GeV" << endl;
@@ -172,32 +172,38 @@ void analyze_mother_daughters(const char* filename, int mother_pdg_id) {
   cout << "Events with PDG " << mother_pdg_id << ": " << events_with_mother << endl;
   cout << "Total daughters of PDG " << mother_pdg_id << " found: " << total_daughters << endl;
   cout << "Total daughter pairs analyzed: " << total_pairs << endl;
-  
-    // Create canvas with 5 plots
+
+    // Create canvas
   TCanvas* c1 = new TCanvas("c1", Form("PDG %d Daughter Analysis", mother_pdg_id), 1600, 1000);
   c1->Divide(3, 2);
   
   c1->cd(1);
+  gPad->SetLogy();
   h_daughter_pdgId->Draw();
-  
+
   c1->cd(2);
+  gPad->SetLogy();
   h_daughter_pt->Draw();
-  
+
   c1->cd(3);
+  gPad->SetLogy();
   h_daughter_eta->Draw();
-  
+
   c1->cd(4);
+  gPad->SetLogy();
   h_invariant_mass->Draw();
   h_invariant_mass->SetLineColor(kRed);
   h_invariant_mass->SetLineWidth(2);
-  
+
   c1->cd(5);
+  gPad->SetLogy();
   h_vertex_r->Draw();
   h_vertex_r->SetLineColor(kOrange);
   h_vertex_r->SetLineWidth(2);
-  
+
     // Save canvas
   c1->SaveAs(Form("pdg%d_daughters_analysis.png", mother_pdg_id));
+  c1->SaveAs(Form("pdg%d_daughters_analysis.pdf", mother_pdg_id));
   
     // Clean up
   file->Close();
